@@ -1,15 +1,16 @@
 import { useState } from "react";
 import W12MHeader from "./W12MHeader";
-import { SpeciesName } from "./species_name"; //str
-import { PlanetName } from "./planet_name"; //str
-import { BeingsNumber } from "./beings_number"; //number?
-//import { MathCheck  } from "./math_check"; //number?
-import { SparingReason } from "./sparing_reason"; //str
+import { SpeciesName } from "./species_name";
+import { PlanetName } from "./planet_name";
+import { BeingsNumber } from "./beings_number";
+import { MathCheck } from "./math_check";
+import { SparingReason } from "./sparing_reason";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("");
   const [planetName, setPlanetName] = useState("");
-  const [beingsNumber, setBeingsNumber] = useState(""); // MathCheck
+  const [beingsNumber, setBeingsNumber] = useState("");
+  const [mathCheck, setMathCheck] = useState("");
   const [sparingReason, setSparingReason] = useState("");
 
   return (
@@ -26,6 +27,10 @@ const W12MForm = () => {
       <BeingsNumber
         beingsNumber={beingsNumber}
         onChangeBeingsNumber={(value) => setBeingsNumber(value)}
+      />
+      <MathCheck
+        mathCheck={mathCheck}
+        onChangeMathCheck={(value) => setMathCheck(value)}
       />
       <SparingReason
         sparingReason={sparingReason}

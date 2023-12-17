@@ -8,7 +8,7 @@ export const SparingReason: React.FC<SparingReasonProps> = ({
   onChangeSparingReason,
 }) => (
   <>
-    <label htmlFor="sparingReason">Sparing Reason</label>
+    <label htmlFor="sparingReason">Reason for Sparing</label>
     <input
       id="sparingReason"
       type="text"
