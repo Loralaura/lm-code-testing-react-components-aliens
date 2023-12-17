@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { TextInput } from "./text_input";
 import { TextInputProps } from "./text_input";
 
-test("renders form label for species name", () => {
+test("Renders form label for species name", () => {
   const requiredProps: TextInputProps = {
     title: "Species Name",
     role: "speciesName",
@@ -211,4 +211,26 @@ test("Number of beings input field calls its onChange function", async () => {
     fireEvent.change(inputField, { target: { value: "1" } });
   }
   expect(mockChange).toBeCalled();
+});
+
+test("Number of beings displays error under input field if submitted value is invalid", () => {
+  const mockValidate = jest.fn();
+  const requiredProps = {
+    title: "Number of Beings",
+    role: "numberOfBeings",
+    value: "1",
+    onChange: () => {},
+    regex: /^[0-9]{10,}$/g,
+    message: "Numbers ONLY. Must be at least 1,000,000,000",
+    submitted: true,
+    validate: mockValidate,
+  };
+  mockValidate.mockReturnValue([
+    "Numbers ONLY. Must be at least 1,000,000,000",
+  ]);
+  render(<TextInput {...requiredProps} />);
+  expect(mockValidate).toBeCalled();
+  expect(mockValidate()).toStrictEqual([
+    "Numbers ONLY. Must be at least 1,000,000,000",
+  ]);
 });
