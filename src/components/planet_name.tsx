@@ -1,6 +1,7 @@
+import { ChangeEventHandler } from "react";
 interface PlanetNameProps {
   planetName: string;
-  onChangePlanetName: (value: string) => void;
+  onChangePlanetName: ChangeEventHandler<HTMLInputElement>;
 }
 
 export const PlanetName: React.FC<PlanetNameProps> = ({
@@ -13,7 +14,7 @@ export const PlanetName: React.FC<PlanetNameProps> = ({
       id="planetName"
       type="text"
       value={planetName}
-      onChange={(e) => onChangePlanetName(e.target.value)}
+      onChange={onChangePlanetName}
     />
   </>
 );

@@ -1,6 +1,7 @@
+import { ChangeEventHandler } from "react";
 interface SparingReasonProps {
   sparingReason: string;
-  onChangeSparingReason: (value: string) => void;
+  onChangeSparingReason: ChangeEventHandler<HTMLTextAreaElement>;
 }
 
 export const SparingReason: React.FC<SparingReasonProps> = ({
@@ -9,11 +10,12 @@ export const SparingReason: React.FC<SparingReasonProps> = ({
 }) => (
   <>
     <label htmlFor="sparingReason">Reason for Sparing</label>
-    <input
+    <textarea
       id="sparingReason"
-      type="text"
+      rows={5}
+      cols={20}
       value={sparingReason}
-      onChange={(e) => onChangeSparingReason(e.target.value)}
+      onChange={onChangeSparingReason}
     />
   </>
 );

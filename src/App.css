@@ -1,7 +1,7 @@
 :root {
   --slime: #305f44;
   --alien: #b7e349;
-  --alienGoo: #b7e349b3; /* Same colour as alien, but translucent */
+  --alienGoo: #b7e349be; /* Same colour as alien, but translucent */
   --cropcircle: #e1b619;
   --space: #1c1b2c;
 }
@@ -24,7 +24,7 @@ body {
   border-radius: 30%;
   padding: 5%;
   background-color: var(--alienGoo);
-  color: var(--slime);
+  color: var(--space);
   font-weight: bold;
 }
 
@@ -34,7 +34,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
   float: inline-end;
   width: 20%;
 }
@@ -54,4 +55,10 @@ button {
 button:hover {
   background-color: var(--space);
   color: var(--cropcircle);
+}
+
+.formOutput {
+  background-color: var(--alien);
+  color: var(--slime);
+  padding: 1%;
 }

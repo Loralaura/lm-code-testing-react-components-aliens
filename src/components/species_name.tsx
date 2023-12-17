@@ -1,6 +1,7 @@
+import { ChangeEventHandler } from "react";
 interface SpeciesNameProps {
   speciesName: string;
-  onChangeSpeciesName: (value: string) => void;
+  onChangeSpeciesName: ChangeEventHandler<HTMLInputElement>;
 }
 
 export const SpeciesName: React.FC<SpeciesNameProps> = ({
@@ -13,7 +14,7 @@ export const SpeciesName: React.FC<SpeciesNameProps> = ({
       id="speciesName"
       type="text"
       value={speciesName}
-      onChange={(e) => onChangeSpeciesName(e.target.value)}
+      onChange={onChangeSpeciesName}
     />
   </>
 );
