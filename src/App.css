@@ -1,12 +1,52 @@
 :root {
-	--light: #fdf8e5;
+  --slime: #305f44;
+  --alien: #b7e349;
+  --alienGoo: #b7e349b3;
+  --cropcircle: #e1b619;
+  --space: #1c1b2c;
 }
 
 body {
-	background-color: var(--light);
-	font-family: Arial, Helvetica, sans-serif;
-	line-height: 1.5;
-	display: flex;
-	justify-content: center;
-	margin: 0;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/007/639/200/non_2x/interstellar-space-abstract-seamless-pattern-shapes-on-dark-purple-background-trendy-texture-with-cartoon-color-icons-design-with-graphic-elements-for-interior-fabric-website-decoration-vector.jpg");
+  background-repeat: repeat;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  color: var(--cropcircle);
+}
+
+.w12MForm {
+  border: var(--alien);
+  border-width: 20px;
+  border-style: dotted;
+  border-radius: 30%;
+  padding: 5%;
+  background-color: var(--alienGoo);
+  color: var(--slime);
+  font-weight: bold;
+}
+
+label {
+  padding: 0.5%;
+  display: inline-block;
+}
+
+button {
+  background-color: var(--cropcircle);
+  color: var(--space);
+  padding: 1% 1%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--slime);
+  color: var(--cropcircle);
+}
+
+input,
+select {
+  float: inline-end;
+  width: 20%;
 }
