@@ -4,6 +4,8 @@
   --alienGoo: #b7e349be; /* Same colour as alien, but translucent */
   --cropcircle: #e1b619;
   --space: #1c1b2c;
+  --error: #570000;
+  --errorGoo: #fe23239b; /* Transucent Red */
 }
 
 body {
@@ -11,7 +13,6 @@ body {
   background-repeat: repeat;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   line-height: 1.5;
-  display: flex;
   justify-content: center;
   margin: 0;
   color: var(--cropcircle);
@@ -19,25 +20,34 @@ body {
 
 .w12MForm {
   border: var(--alien);
-  border-width: 20px;
+  border-width: 25px;
   border-style: dotted;
-  border-radius: 30%;
+  border-radius: 25%;
   padding: 5%;
   background-color: var(--alienGoo);
   color: var(--space);
   font-weight: bold;
+  width: 70%;
+  margin: auto;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 label {
-  padding: 0.5%;
+  padding: 1%;
   display: inline-block;
 }
 
-input,
+input[type="text"],
 select,
 textarea {
-  float: inline-end;
-  width: 20%;
+  width: 100%;
+  padding: 1%;
+  border: 1px solid var(--slime);
+  border-radius: 4px;
+  resize: vertical;
 }
 
 button {
@@ -61,4 +71,16 @@ button:hover {
   background-color: var(--alien);
   color: var(--slime);
   padding: 1%;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.error {
+  color: var(--error);
+  font-style: italic;
+  background-color: var(--errorGoo);
 }
