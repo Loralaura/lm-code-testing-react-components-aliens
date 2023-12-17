@@ -4,11 +4,14 @@ import { SpeciesName } from "./species_name"; //str
 import { PlanetName } from "./planet_name"; //str
 //import { BeingsNumber } from "./beings_number"; //number?
 //import { MathCheck  } from "./math_check"; //number?
-//import { SparingReason } from "./sparing_reason"; //str
+import { SparingReason } from "./sparing_reason"; //str
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("");
   const [planetName, setPlanetName] = useState("");
+  // BeingsNumber
+  // MathCheck
+  const [sparingReason, setSparingReason] = useState("");
 
   return (
     <section className="w12MForm">
@@ -20,6 +23,10 @@ const W12MForm = () => {
       <PlanetName
         planetName={planetName}
         onChangePlanetName={(value) => setPlanetName(value)}
+      />
+      <SparingReason
+        sparingReason={sparingReason}
+        onChangeSparingReason={(value) => setSparingReason(value)}
       />
     </section>
   );
